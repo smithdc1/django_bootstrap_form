@@ -18,6 +18,12 @@ from django.contrib import admin
 from django.template.response import TemplateResponse
 from django.urls import path
 from django import forms
+from django.forms.renderers import TemplatesSetting
+
+
+class CustomFormRenderer(TemplatesSetting):
+    field_template_name = "forms/field.html"
+
 
 days = {
     1: "Monday",
