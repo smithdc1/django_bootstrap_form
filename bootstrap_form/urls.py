@@ -33,15 +33,17 @@ days = {
 
 
 class BootstrapForm(forms.Form):
-    name = forms.CharField(max_length=50)
-    email = forms.CharField(max_length=50)
+    name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={"class": "form-control"}))
+    email = forms.CharField(max_length=50, widget=forms.TextInput(attrs={"class": "form-control"}))
     appointment_date = forms.ChoiceField(
         choices=days,
-        widget=forms.RadioSelect(),
+        widget=forms.RadioSelect(attrs={"class": "form-check-input"}),
+        template_name="forms/radio_field.html",
         help_text="Select which day you would like your appointment. We're only open Monday-Wednesday."
     )
     attachment = forms.FileField(
         required=False,
+        widget=forms.FileInput(attrs={"class": "form-control"}),
         help_text="Please provide any files you wish us to review prior to your appointment.",
     )
 

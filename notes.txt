@@ -1,0 +1,5 @@
+BoundField.label_tag can accept attrs to add to the `<label>`. However, no easy way to actually use it in dtl.
+Can write it out in full, but then loose ability to use suffix logic. etc.
+
+https://github.com/django/django/blob/656192c2c96bb955a399d92f381e38fe2254fe17/django/forms/boundfield.py#L165
+

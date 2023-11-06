@@ -1,0 +1,11 @@
+<fieldset>
+  <legend class="fs-6">{{ field.label }}</legend>
+{% if field.help_text %}<div class="form-text"{% if field.id_for_label %} id="{{ field.id_for_label}}_helptext"{% endif %}>{{ field.help_text|safe }}</div>{% endif %}
+{{ field.errors }}
+{% for choice in field %}
+    <div class="form-check">
+    <label for="{{ choice.id_for_label }}" class="form-check-label">{{ choice.choice_label }}</label>
+    {{ choice.tag }}
+    </div>
+{% endfor %}
+</fieldset>
