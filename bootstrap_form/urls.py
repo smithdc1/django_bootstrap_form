@@ -23,6 +23,7 @@ from django.forms.renderers import TemplatesSetting
 
 class CustomFormRenderer(TemplatesSetting):
     field_template_name = "forms/field.html"
+    form_template_name = "forms/form.html"
 
 
 days = {
