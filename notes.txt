@@ -3,3 +3,7 @@ Can write it out in full, but then loose ability to use suffix logic. etc.
 
 https://github.com/django/django/blob/656192c2c96bb955a399d92f381e38fe2254fe17/django/forms/boundfield.py#L165
 
+css_classes can be added to the form. However, no easy way to use it in dtl.
+https://github.com/django/django/blame/main/django/forms/boundfield.py#L220
+This would be useful to wrap each <div> in a form.
+https://github.com/django/django/blob/main/django/forms/templates/django/forms/div.html#L6
