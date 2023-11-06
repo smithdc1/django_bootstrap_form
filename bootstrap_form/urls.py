@@ -34,6 +34,8 @@ days = {
 
 
 class BootstrapForm(forms.Form):
+    template_name = "forms/bootstrap_form.html"
+
     name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={"class": "form-control"}))
     email = forms.CharField(max_length=50, widget=forms.TextInput(attrs={"class": "form-control"}))
     appointment_date = forms.ChoiceField(

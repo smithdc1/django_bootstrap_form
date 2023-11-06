@@ -1,0 +1,19 @@
+{{ errors }}
+{% if errors and not fields %}
+  <div>{% for field in hidden_fields %}{{ field }}{% endfor %}</div>
+{% endif %}
+
+<div class="row">
+    <div class="mb-3 col">
+    {{ form.name.as_field_group }}
+    </div>
+    <div class="mb-3 col">
+    {{ form.email.as_field_group }}
+    </div>
+</div>
+<div class="mb-3">{{ form.appointment_date.as_field_group }}</div>
+<div class="mb-3">{{ form.attachment.as_field_group }}</div>
+
+{% if not fields and not errors %}
+  {% for field in hidden_fields %}{{ field }}{% endfor %}
+{% endif %}
