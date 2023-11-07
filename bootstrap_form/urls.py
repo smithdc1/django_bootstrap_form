@@ -53,8 +53,10 @@ class BootstrapForm(forms.Form):
 
 def index(request):
     form = BootstrapForm()
-    context = {"form": form}
+    form_errors = BootstrapForm({})
+    context = {"form": form, "form_errors": form_errors}
     return TemplateResponse(request, "index.html", context)
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
