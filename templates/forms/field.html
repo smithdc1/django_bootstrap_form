@@ -1,8 +1,8 @@
 {% if field.use_fieldset %}
   <fieldset>
-    <legend class="form-label">{{ field.label }}</legend>
+    <legend class="form-label" {% if field.id_for_label %}for="{{ field.id_for_label }}"{% endif %}>{{ field.label }}</legend>
 {% else %}
-    <label class="form-label">{{ field.label }}</label>
+    <label class="form-label" {% if field.id_for_label %}for="{{ field.id_for_label }}"{% endif %}>{{ field.label }}</label>
 {% endif %}
 {% if field.help_text %}<div class="form-text mb-2"{% if field.id_for_label %} id="{{ field.id_for_label}}_helptext"{% endif %}>{{ field.help_text|safe }}</div>{% endif %}
 {{ field.errors }}
