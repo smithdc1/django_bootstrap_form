@@ -19,7 +19,10 @@ from django.template.response import TemplateResponse
 from django.urls import path
 from django import forms
 from django.forms.renderers import TemplatesSetting
+from django.forms.utils import ErrorList
 
+class CustomErrorList(ErrorList):
+    template_name = "forms/errors.html"
 
 class CustomFormRenderer(TemplatesSetting):
     field_template_name = "forms/field.html"
@@ -49,6 +52,10 @@ class BootstrapForm(forms.Form):
         widget=forms.FileInput(attrs={"class": "form-control"}),
         help_text="Please provide any files you wish us to review prior to your appointment.",
     )
+
+    def __init__(self, *args, **kwargs):
+        kwargs.update({'error_class': CustomErrorList})
+        super().__init__(*args, **kwargs)
 
 
 def index(request):
